@@ -1,0 +1,110 @@
+{% extends "users/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="register-page sidebar-mini ">
+    <div class="wrapper wrapper-full-page ">
+        <div class="full-page login-page section-image" filter-color="black"
+             style="background-image: url({% static 'users/images/bg14.jpg' %});">
+            <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+            <div class="content">
+                <div class="container">
+                    <div class="col-md-4 ml-auto mr-auto">
+                        <form class="form" method="POST">
+                            {% csrf_token %}
+                            <div class="card card-login card-plain">
+                                <div class="card-header ">
+                                    <h2 class="card-title text-center">Register</h2>
+                                    <br/>
+                                </div>
+                                <div class="card-body ">
+
+                                    <div class="input-group no-border form-control-lg">
+                                    <span class="input-group-prepend">
+                                         <div class="input-group-text">
+                                           <i class="now-ui-icons users_circle-08"></i>
+                                         </div>
+                                    </span>
+                                        <input type="text" class="form-control" name='first_name'
+                                               placeholder="First Name.." required>
+                                    </div>
+
+                                    <div class="input-group no-border form-control-lg">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="now-ui-icons text_caps-small"></i>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="last_name" placeholder="Last Name.."
+                                               class="form-control" required>
+                                    </div>
+                                    <div class="input-group no-border form-control-lg">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="now-ui-icons text_caps-small"></i>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="username" placeholder="Username.."
+                                               class="form-control" required>
+                                    </div>
+                                    <div class="input-group no-border form-control-lg">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="now-ui-icons text_caps-small"></i>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="email" placeholder="Email ID.." class="form-control" required>
+                                    </div>
+                                    <div class="input-group no-border form-control-lg">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="now-ui-icons text_caps-small"></i>
+                                            </div>
+                                        </div>
+                                        <input type="password" name="password1" placeholder="Password.."
+                                               class="form-control" required>
+                                    </div>
+                                    <div class="input-group no-border form-control-lg">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="now-ui-icons text_caps-small"></i>
+                                            </div>
+                                        </div>
+                                        <input type="password" name="password2" placeholder=" Confirm Password.."
+                                               class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer ">
+                                    <button type="submit" class="btn btn-primary btn-round btn-lg btn-block mb-3">
+                                        Submit
+                                    </button>
+
+                                    <div class="pull-left">
+                                        <h6><a href="{% url 'USERS-login' %}" class="link footer-link">Already have an
+                                            account</a></h6>
+                                    </div>
+
+                                    <div class="pull-right">
+                                        <h6><a href="#pablo" class="link footer-link">Need Help?</a></h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock content %}
+
+
+

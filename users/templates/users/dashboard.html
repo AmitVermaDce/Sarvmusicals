@@ -1,0 +1,127 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+
+<div class=" sidebar-mini ">
+    <div class="wrapper ">
+        {% include 'users/sidebar.html' %}
+        <div class="main-panel" id="main-panel">
+            {% include 'users/navbar.html' %}
+            <div class="panel-header panel-header-lg">
+                <canvas id="bigDashboardChart"></canvas>
+            </div>
+
+
+
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-stats">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="statistics">
+                                            <div class="info">
+                                                <div class="icon icon-primary">
+                                                    <i class="now-ui-icons ui-2_chat-round"></i>
+                                                </div>
+                                                <h3 class="info-title">859</h3>
+                                                <h6 class="stats-title">Messages</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="statistics">
+                                            <div class="info">
+                                                <div class="icon icon-success">
+                                                    <i class="now-ui-icons business_money-coins"></i>
+                                                </div>
+                                                <h3 class="info-title"><small>$</small>3,521</h3>
+                                                <h6 class="stats-title">Today Revenue</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="statistics">
+                                            <div class="info">
+                                                <div class="icon icon-info">
+                                                    <i class="now-ui-icons users_single-02"></i>
+                                                </div>
+                                                <h3 class="info-title">562</h3>
+                                                <h6 class="stats-title">Customers</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="statistics">
+                                            <div class="info">
+                                                <div class="icon icon-danger">
+                                                    <i class="now-ui-icons objects_support-17"></i>
+                                                </div>
+                                                <h3 class="info-title">353</h3>
+                                                <h6 class="stats-title">Support Requests</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Latest Blog Posts</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                        <th>
+                                            User
+                                        </th>
+                                        <th>
+                                            Title
+                                        </th>
+                                        <th>
+                                            Content
+                                        </th>
+                                        <th class="text-right">
+                                            Date posted
+                                        </th>
+                                        </thead>
+                                        <tbody>
+                                        {% for post in posts %}
+                                        <tr>
+                                            <td>
+                                                {{post.author.first_name}} {{post.author.last_name}}
+                                            </td>
+                                            <td>
+                                                {{post.title}}
+                                            </td>
+                                            <td>
+                                                {{post.content}}
+                                            </td>
+                                            <td class="text-right">
+                                                {{ post.date_posted|date:"F d, Y" }}
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            {% include 'users/footer.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
